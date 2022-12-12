@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ForestSounds : MonoBehaviour
+public class SoundManager : MonoBehaviour
 {
     public AudioSource audioSource;
     public AudioClip clip;
@@ -15,10 +15,6 @@ public class ForestSounds : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(audioSource.isPlaying == false)
-        {
-            audioSource.Play();
-        }
-
+        audioSource.Play();   
     }
 }

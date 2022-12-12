@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IgnorePhysics : MonoBehaviour
+public class ItemAcquired : MonoBehaviour
 {
+    public AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -15,12 +16,12 @@ public class IgnorePhysics : MonoBehaviour
     {
         
     }
-
-    void OnCollisionEnter(Collision collision)
+    
+    private void OnCollisionEnter(Collision collider)
     {
-        if(collision.gameObject.tag == "Sword")
+        if(collider.gameObject.tag == "Player")
         {
-
+            audioSource.Play();
         }
     }
 }
